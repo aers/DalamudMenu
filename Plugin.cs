@@ -72,8 +72,8 @@ namespace DalamudMenu
             }
 
             // atkValueArgs is actually an array of AtkValues used as args. all their UI code works like this.
-            // in this case, menu size is stored in atkValueArgs[4], and the next 16 slots are the MainCommand
-            // the 16 slots after that, if they exist, are the entry names, but they are otherwise pulled from MainCommand EXD
+            // in this case, menu size is stored in atkValueArgs[4], and the next 15 slots are the MainCommand
+            // the 15 slots after that, if they exist, are the entry names, but they are otherwise pulled from MainCommand EXD
             // reference the original function for more details :)
 
             // step 1) move all the current menu items down so we can put Dalamud at the top like it deserves
@@ -147,7 +147,7 @@ namespace DalamudMenu
             this.hookAgentHudOpenSystemMenu.Dispose();
 
             this.hookUiModuleRequestMainCommand.Disable();
-            this.hookAgentHudOpenSystemMenu.Dispose();
+            this.hookUiModuleRequestMainCommand.Dispose();
 
             this.pluginInterface.Dispose();
         }
